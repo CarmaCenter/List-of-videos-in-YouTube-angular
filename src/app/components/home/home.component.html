@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class=" shadow-lg p-3 mb-5 bg-white rounded text-center mt-3">List of videos in YouTube channel
+    <h6 class=" text-center mt-3"><a
+        href="https://www.youtube.com/watch?v=f3CcneXbJk8&list=PLp50dWW_m40WYX5tynzpPf0a3ZgjGT1bI">Angular Course From
+        ARC Tutorials Channel</a>
+    </h6>
+  </h2>
+
+  <div>
+    <input type="text" [(ngModel)]='filteredString' class="form-control mb-3" placeholder="Search In Videos">
+  </div>
+  <div class="row all-content">
+    <div *ngFor="let i=index; let item of dataApi | filter:filteredString "
+      class="col-12 col-md-3 shadow p-3 mr-1 ml-1 mb-5 bg-white rounded card">
+      <div><img [src]="item.snippet.thumbnails.high.url" class="card-img-top" width="100%" height="100%" alt=""></div>
+      <div class="card-body">
+        <h6 class="card-title">{{item.snippet.title}}</h6>
+      </div>
+      <button class="btn btn-warning w-100" [routerLink]="['details',i]">Details</button>
+    </div>
+  </div>
+</div>

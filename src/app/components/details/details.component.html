@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="header row shadow-lg p-3 mb-5 bg-white rounded mt-4">
+    <div class="title col-12 col-md-6">
+      <h2 class="text-center text-md-left">Video Details</h2>
+    </div>
+    <div class="go-home col-12 col-md-6 text-center text-md-right">
+      <button class="btn btn-warning" routerLink="/">
+        <i class="fa fa-home fa-2x" aria-hidden="true"></i>Home
+      </button>
+    </div>
+  </div>
+  <div *ngIf="!videoId">
+    <p class="alret alert-danger p-3">Can't Match Any Video</p>
+  </div>
+  <div *ngIf="videoId" class="row all-content">
+    <div class="col-8 shadow p-3 mr-1 ml-1 mb-5 bg-white rounded card">
+      <div>
+        <iframe width="100%" height="315" [src]="video.contentDetails.videoId | youtube" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="card-body row">
+        <div class="col-12 col-md-5">
+          <div class="rating text-left">
+            <input type="radio" name="star" id="star1" /><label for="star1"></label><input type="radio" name="star"
+              id="star2" /><label for="star2"></label><input type="radio" name="star" id="star3" /><label
+              for="star3"></label><input type="radio" name="star" id="star4" /><label for="star4"></label><input
+              type="radio" name="star" id="star5" /><label for="star5"></label>
+          </div>
+        </div>
+        <div class="col-12 col-md-7 text-right">
+          <a href=""><i class="fa fa-heart fa-2x" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="card-body h-50">
+        <h5 class="card-title">{{ video.snippet.title }}</h5>
+        <p>
+          <strong>VideoPublishedAt:</strong> {{video.contentDetails.videoPublishedAt}}
+        </p>
+        <p><strong>The duration of the video:</strong>06:00 Min</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,41 @@
-.all-content {
- justify-content: space-between;
+.container {
+ h2 {
+  i {
+   color: #fe0000;
+  }
+ }
+
+ h6 {
+  a {
+   color: #ffc107;
+  }
+ }
+ .all-content {
+  justify-content: space-between;
+.img{
+ position: relative;
+ .overlay{
+  position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.336);
+   opacity: 0;
+   transition: .7s;
+   
+   a{
+    color: #ffc107;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    cursor: pointer;
+   }
+ }
 }
-
-h6 {
- a {
-  color: #ffc107;
-
+.img:hover .overlay{
+  opacity: 1;
+}
  }
 }
